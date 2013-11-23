@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tst_testnoobavssadtest.cpp'
 **
-** Created: Sat Nov 23 00:51:46 2013
+** Created: Fri Nov 22 16:08:51 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -22,7 +22,7 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,14 +35,6 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
       53,   19,   19,   19, 0x08,
       70,   19,   19,   19, 0x08,
       87,   19,   19,   19, 0x08,
-     104,   19,   19,   19, 0x08,
-     121,   19,   19,   19, 0x08,
-     138,   19,   19,   19, 0x08,
-     155,   19,   19,   19, 0x08,
-     172,   19,   19,   19, 0x08,
-     189,   19,   19,   19, 0x08,
-     209,   19,   19,   19, 0x08,
-     229,   19,   19,   19, 0x08,
 
        0        // eod
 };
@@ -50,11 +42,7 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
 static const char qt_meta_stringdata_TestNoobaVSSADTest[] = {
     "TestNoobaVSSADTest\0\0initTestCase()\0"
     "cleanupTestCase()\0testSpeedNode1()\0"
-    "testSpeedNode2()\0testSpeedNode3()\0"
-    "testSpeedNode4()\0testSpeedNode5()\0"
-    "testSpeedNode6()\0testSpeedNode7()\0"
-    "testSpeedNode8()\0testDistanceNode1()\0"
-    "testDistanceNode2()\0testSpeedNode1_data()\0"
+    "testSpeedNode2()\0testSpeedNode1_data()\0"
 };
 
 void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -67,15 +55,7 @@ void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 1: _t->cleanupTestCase(); break;
         case 2: _t->testSpeedNode1(); break;
         case 3: _t->testSpeedNode2(); break;
-        case 4: _t->testSpeedNode3(); break;
-        case 5: _t->testSpeedNode4(); break;
-        case 6: _t->testSpeedNode5(); break;
-        case 7: _t->testSpeedNode6(); break;
-        case 8: _t->testSpeedNode7(); break;
-        case 9: _t->testSpeedNode8(); break;
-        case 10: _t->testDistanceNode1(); break;
-        case 11: _t->testDistanceNode2(); break;
-        case 12: _t->testSpeedNode1_data(); break;
+        case 4: _t->testSpeedNode1_data(); break;
         default: ;
         }
     }
@@ -114,9 +94,9 @@ int TestNoobaVSSADTest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 5;
     }
     return _id;
 }
