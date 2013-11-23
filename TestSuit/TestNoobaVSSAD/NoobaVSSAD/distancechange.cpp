@@ -41,7 +41,12 @@ QList<DetectedEvent> DistanceChange::processEventsLocal(const QList<DetectedEven
         foreach(DetectedEvent newEvent, event){
 
             //We are checking is there any previous matching distance for each new distance.
-            //If so, we calcuate difference and add an DetectedEvent to the output List.
+            //If so, we calcuate difference and add an DetectedEvent to the output List.QList<QString> newMessage = newEvent.getMessage().split(",");
+            QString newMessageId = newEvent.getIdentifier();
+            if(newMessageId != "distance"){
+                //qDebug()<<"------test---identifier";
+                continue;
+            }
 
             QList<QString> newMessage = newEvent.getMessage().split(",");
             if(previousEvents.contains(newMessage.at(1))){
@@ -51,9 +56,11 @@ QList<DetectedEvent> DistanceChange::processEventsLocal(const QList<DetectedEven
                 DetectedEvent oldEvent = previousEvents.value(newMessage.at(1));
                 QList<QString> oldMessage = oldEvent.getMessage().split(",");
 
-                if(newMessage.at(0).toFloat() - oldMessage.at(0).toFloat() == 0.0){
+                if(newMessage.at(0).toFloat() - oldMessage.at(0).toFloat() == 0.0 || (newMessage.at(1).split("-").at(0)== newMessage.at(1).split("-").at(1))){
+                    //qDebug()<<"------test-------";
                     continue;
                 }
+
                 float distanceChange = (newMessage.at(2).toFloat() - oldMessage.at(2).toFloat())/ (newMessage.at(0).toFloat() - oldMessage.at(0).toFloat());
 
                 distanceChangeEvent.append(DetectedEvent("distChange",QString("%1,%2,%3").arg(newMessage.at(0)).arg(newMessage.at(1)).arg(distanceChange),1.0));

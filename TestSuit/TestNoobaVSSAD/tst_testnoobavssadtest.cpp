@@ -5,7 +5,7 @@
 #include <NoobaVSSAD/distancenode.h>
 #include <QList>
 #include <NoobaVSSAD/detectedevent.h>
-
+#include <NoobaVSSAD/distancechange.h>
 
 class TestNoobaVSSADTest : public QObject
 {
@@ -32,6 +32,12 @@ private Q_SLOTS:
     void testDistanceNode1();
     void testDistanceNode2();
     //void testDistanceNode3();
+
+    //---test DistanceNode-----------
+    void testDistanceChange1();
+    void testDistanceChange2();
+    void testDistanceChange3();
+    void testDistanceChange4();
 
     void testSpeedNode1_data();
 
@@ -307,6 +313,144 @@ void TestNoobaVSSADTest::testDistanceNode2()//test number of results
 
 }
 
+//-----------------------Test distancechangenode-----------------------------------------------------------------------------
+void TestNoobaVSSADTest::testDistanceChange1()//test two inputs
+{
+//    QFETCH(QString, data);
+//    QVERIFY2(true, "Failure");
+    DistanceChange distchangenode;
+    QList<DetectedEvent> blobevents;
+    QList<DetectedEvent> distchangeEvents;
+
+    blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+    distchangeEvents = distchangenode.processEventsLocal(blobevents);
+
+    QVERIFY2(distchangeEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+
+    //blobevents.clear();
+    blobevents.append(DetectedEvent("blob","2,1,20.0,30.0",1.0));
+    distchangeEvents = distchangenode.processEventsLocal(blobevents);
+    QVERIFY2(distchangeEvents.count() == 0,QString("%1 events in results. should be 1").arg(distchangeEvents.count()).toLocal8Bit());
+    //Can test the actual speed too.
+}
+
+void TestNoobaVSSADTest::testDistanceChange2()//test two inputs
+{
+//    QFETCH(QString, data);
+//    QVERIFY2(true, "Failure");
+    DistanceChange distchangenode;
+    DistanceNode distnode;
+
+    QList<DetectedEvent> blobevents;
+    QList<DetectedEvent> distEvents;
+
+    QList<DetectedEvent> distchangeEvents;
+
+    blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+    //distEvents = distnode.processEventsLocal(blobevents);
+    //distchangeEvents = distchangenode.processEventsLocal(blobevents);
+
+
+    QVERIFY2(distchangeEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+    QVERIFY2(distEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+
+    blobevents.clear();
+    blobevents.append(DetectedEvent("blob","1,1,20.0,30.0",1.0));
+    blobevents.append(DetectedEvent("blob","1,1,25.0,35.0",1.0));
+
+    distEvents = distnode.processEventsLocal(blobevents);
+    distchangeEvents = distchangenode.processEventsLocal(distEvents);
+    //qDebug()<<"00000--------";
+    //connect(&distnode, SIGNAL(generateEvent(QList<DetectedEvent>)), &distchangenode, SLOT(captureEvent(QList<DetectedEvent>)));
+
+    //blobevents.clear();
+    blobevents.append(DetectedEvent("blob","1,1,30.0,40.0",1.0));
+    blobevents.append(DetectedEvent("blob","1,1,35.0,45.0",1.0));
+    distEvents = distnode.processEventsLocal(blobevents);
+    distchangeEvents = distchangenode.processEventsLocal(distEvents);
+
+    QVERIFY2(distEvents.count() ==6,QString("%1 events in results. should be 0").arg(distEvents.count()).toLocal8Bit());
+    QVERIFY2(distchangeEvents.count() == 0,QString("%1 events in results. should be 0").arg(distchangeEvents.count()).toLocal8Bit());
+    //QVERIFY2(distchangeEvents.last().getMessage().split(",").at(0).toInt() == 5,QString("%1 as the result. should be 5").arg(distchangeEvents.first().getMessage().split(",").at(0)).toLocal8Bit());
+
+    //
+}
+
+void TestNoobaVSSADTest::testDistanceChange3()//test two inputs
+{
+//    QFETCH(QString, data);
+//    QVERIFY2(true, "Failure");
+    DistanceChange distchangenode;
+    DistanceNode distnode;
+
+    QList<DetectedEvent> blobevents;
+    QList<DetectedEvent> distEvents;
+
+    QList<DetectedEvent> distchangeEvents;
+
+    blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+    //distEvents = distnode.processEventsLocal(blobevents);
+    //distchangeEvents = distchangenode.processEventsLocal(blobevents);
+
+
+    QVERIFY2(distchangeEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+    QVERIFY2(distEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+
+    blobevents.clear();
+    blobevents.append(DetectedEvent("blob","1,1,20.0,30.0",1.0));
+    blobevents.append(DetectedEvent("blob","2,1,25.0,35.0",1.0));
+
+    distEvents = distnode.processEventsLocal(blobevents);
+    distchangeEvents = distchangenode.processEventsLocal(distEvents);
+    //qDebug()<<"00000--------";
+    //connect(&distnode, SIGNAL(generateEvent(QList<DetectedEvent>)), &distchangenode, SLOT(captureEvent(QList<DetectedEvent>)));
+
+    //blobevents.clear();
+    blobevents.append(DetectedEvent("blob","3,1,30.0,40.0",1.0));
+    blobevents.append(DetectedEvent("blob","4,1,35.0,45.0",1.0));
+    distEvents = distnode.processEventsLocal(blobevents);
+    distchangeEvents = distchangenode.processEventsLocal(distEvents);
+
+    QVERIFY2(distEvents.count() == 6,QString("%1 events in results. should be 6").arg(distEvents.count()).toLocal8Bit());
+    QVERIFY2(distchangeEvents.count() == 0,QString("%1 events in results. should be 0").arg(distchangeEvents.count()).toLocal8Bit());
+
+    //
+}
+
+void TestNoobaVSSADTest::testDistanceChange4()//test two inputs
+{
+//    QFETCH(QString, data);
+//    QVERIFY2(true, "Failure");
+    DistanceChange distchangenode;
+    DistanceNode distnode;
+
+    QList<DetectedEvent> blobevents;
+    QList<DetectedEvent> distchangeEvents;
+
+    blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+    distchangeEvents = distchangenode.processEventsLocal(blobevents);
+
+
+    QVERIFY2(distchangeEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+
+    blobevents.clear();
+    blobevents.append(DetectedEvent("blob","1,1,20.0,30.0",1.0));
+    blobevents.append(DetectedEvent("blob","2,1,25.0,35.0",1.0));
+
+    //qDebug()<<"00000--------";
+    //connect(&distnode, SIGNAL(generateEvent(QList<DetectedEvent>)), &distchangenode, SLOT(captureEvent(QList<DetectedEvent>)));
+
+    //blobevents.clear();
+    blobevents.append(DetectedEvent("blob","3,1,30.0,40.0",1.0));
+    blobevents.append(DetectedEvent("blob","4,1,35.0,45.0",1.0));
+
+    distchangeEvents = distchangenode.processEventsLocal(blobevents);
+
+    //QVERIFY2(distEvents.count() ==0,QString("%1 events in results. should be 0").arg(distEvents.count()).toLocal8Bit());
+    QVERIFY2(distchangeEvents.count() == 0,QString("%1 events in results. should be 0").arg(distchangeEvents.count()).toLocal8Bit());
+
+    //
+}
 
 void TestNoobaVSSADTest::testSpeedNode1_data()
 {
