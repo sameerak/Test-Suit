@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tst_testnoobavssadtest.cpp'
 **
-** Created: Sat Nov 23 15:17:37 2013
+** Created: Fri Dec 6 14:33:02 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -22,45 +22,64 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      36,   20,   19,   19, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      20,   19,   19,   19, 0x08,
-      35,   19,   19,   19, 0x08,
-      53,   19,   19,   19, 0x08,
-      70,   19,   19,   19, 0x08,
+      72,   19,   19,   19, 0x08,
       87,   19,   19,   19, 0x08,
-     104,   19,   19,   19, 0x08,
-     121,   19,   19,   19, 0x08,
-     138,   19,   19,   19, 0x08,
-     155,   19,   19,   19, 0x08,
-     172,   19,   19,   19, 0x08,
-     189,   19,   19,   19, 0x08,
-     209,   19,   19,   19, 0x08,
-     229,   19,   19,   19, 0x08,
-     251,   19,   19,   19, 0x08,
-     273,   19,   19,   19, 0x08,
-     295,   19,   19,   19, 0x08,
-     317,   19,   19,   19, 0x08,
+     105,   19,   19,   19, 0x08,
+     122,   19,   19,   19, 0x08,
+     139,   19,   19,   19, 0x08,
+     156,   19,   19,   19, 0x08,
+     173,   19,   19,   19, 0x08,
+     190,   19,   19,   19, 0x08,
+     207,   19,   19,   19, 0x08,
+     224,   19,   19,   19, 0x08,
+     241,   19,   19,   19, 0x08,
+     258,   19,   19,   19, 0x08,
+     284,   19,   19,   19, 0x08,
+     304,   19,   19,   19, 0x08,
+     324,   19,   19,   19, 0x08,
+     353,   19,   19,   19, 0x08,
+     375,   19,   19,   19, 0x08,
+     397,   19,   19,   19, 0x08,
+     419,   19,   19,   19, 0x08,
+     441,   19,   19,   19, 0x08,
+     459,   19,   19,   19, 0x08,
+     477,   19,   19,   19, 0x08,
+     495,   19,   19,   19, 0x08,
+     513,   19,   19,   19, 0x08,
+     531,   19,   19,   19, 0x08,
+     568,  553,   19,   19, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_TestNoobaVSSADTest[] = {
-    "TestNoobaVSSADTest\0\0initTestCase()\0"
-    "cleanupTestCase()\0testSpeedNode1()\0"
-    "testSpeedNode2()\0testSpeedNode3()\0"
-    "testSpeedNode4()\0testSpeedNode5()\0"
-    "testSpeedNode6()\0testSpeedNode7()\0"
-    "testSpeedNode8()\0testDistanceNode1()\0"
-    "testDistanceNode2()\0testDistanceChange1()\0"
-    "testDistanceChange2()\0testDistanceChange3()\0"
-    "testDistanceChange4()\0testSpeedNode1_data()\0"
+    "TestNoobaVSSADTest\0\0generated_event\0"
+    "generateEvent(QList<DetectedEvent>)\0"
+    "initTestCase()\0cleanupTestCase()\0"
+    "testSpeedNode1()\0testSpeedNode2()\0"
+    "testSpeedNode3()\0testSpeedNode4()\0"
+    "testSpeedNode5()\0testSpeedNode6()\0"
+    "testSpeedNode7()\0testSpeedNode8()\0"
+    "testSpeedNode9()\0testSpeedNodeSignalSlot()\0"
+    "testDistanceNode1()\0testDistanceNode2()\0"
+    "testDistanceNodeSiglanSlot()\0"
+    "testDistanceChange1()\0testDistanceChange2()\0"
+    "testDistanceChange3()\0testDistanceChange4()\0"
+    "testFileWriter1()\0testFileWriter2()\0"
+    "testFileWriter3()\0testFileWriter4()\0"
+    "testFileWriter5()\0testSpeedNode1_data()\0"
+    "captured_event\0onCaptureEvent(QList<DetectedEvent>)\0"
 };
 
 void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -69,27 +88,36 @@ void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         Q_ASSERT(staticMetaObject.cast(_o));
         TestNoobaVSSADTest *_t = static_cast<TestNoobaVSSADTest *>(_o);
         switch (_id) {
-        case 0: _t->initTestCase(); break;
-        case 1: _t->cleanupTestCase(); break;
-        case 2: _t->testSpeedNode1(); break;
-        case 3: _t->testSpeedNode2(); break;
-        case 4: _t->testSpeedNode3(); break;
-        case 5: _t->testSpeedNode4(); break;
-        case 6: _t->testSpeedNode5(); break;
-        case 7: _t->testSpeedNode6(); break;
-        case 8: _t->testSpeedNode7(); break;
-        case 9: _t->testSpeedNode8(); break;
-        case 10: _t->testDistanceNode1(); break;
-        case 11: _t->testDistanceNode2(); break;
-        case 12: _t->testDistanceChange1(); break;
-        case 13: _t->testDistanceChange2(); break;
-        case 14: _t->testDistanceChange3(); break;
-        case 15: _t->testDistanceChange4(); break;
-        case 16: _t->testSpeedNode1_data(); break;
+        case 0: _t->generateEvent((*reinterpret_cast< QList<DetectedEvent>(*)>(_a[1]))); break;
+        case 1: _t->initTestCase(); break;
+        case 2: _t->cleanupTestCase(); break;
+        case 3: _t->testSpeedNode1(); break;
+        case 4: _t->testSpeedNode2(); break;
+        case 5: _t->testSpeedNode3(); break;
+        case 6: _t->testSpeedNode4(); break;
+        case 7: _t->testSpeedNode5(); break;
+        case 8: _t->testSpeedNode6(); break;
+        case 9: _t->testSpeedNode7(); break;
+        case 10: _t->testSpeedNode8(); break;
+        case 11: _t->testSpeedNode9(); break;
+        case 12: _t->testSpeedNodeSignalSlot(); break;
+        case 13: _t->testDistanceNode1(); break;
+        case 14: _t->testDistanceNode2(); break;
+        case 15: _t->testDistanceNodeSiglanSlot(); break;
+        case 16: _t->testDistanceChange1(); break;
+        case 17: _t->testDistanceChange2(); break;
+        case 18: _t->testDistanceChange3(); break;
+        case 19: _t->testDistanceChange4(); break;
+        case 20: _t->testFileWriter1(); break;
+        case 21: _t->testFileWriter2(); break;
+        case 22: _t->testFileWriter3(); break;
+        case 23: _t->testFileWriter4(); break;
+        case 24: _t->testFileWriter5(); break;
+        case 25: _t->testSpeedNode1_data(); break;
+        case 26: _t->onCaptureEvent((*reinterpret_cast< QList<DetectedEvent>(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObjectExtraData TestNoobaVSSADTest::staticMetaObjectExtraData = {
@@ -124,10 +152,17 @@ int TestNoobaVSSADTest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 27;
     }
     return _id;
+}
+
+// SIGNAL 0
+void TestNoobaVSSADTest::generateEvent(QList<DetectedEvent> _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE

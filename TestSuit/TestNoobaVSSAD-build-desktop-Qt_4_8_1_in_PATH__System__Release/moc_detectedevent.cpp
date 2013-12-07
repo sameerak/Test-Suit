@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'detectedevent.h'
 **
-** Created: Sat Nov 23 14:36:55 2013
+** Created: Fri Dec 6 14:33:16 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
