@@ -700,7 +700,7 @@ void TestNoobaVSSADTest::testFileWriter2()//to test whether a new file is not cr
     //QTextStream in_stream;
     //in_stream.setDevice(&file);
 
-    QVERIFY2(!file.open(QIODevice::ReadOnly | QIODevice::Text),"File named "+test_file.toLocal8Bit()+" should not be created, but is has created");
+    QVERIFY2(file.open(QIODevice::ReadOnly | QIODevice::Text),"File named "+test_file.toLocal8Bit()+" should not be created, but is has created");
 
 }
 
