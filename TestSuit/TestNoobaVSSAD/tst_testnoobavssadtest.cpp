@@ -50,7 +50,7 @@ private Q_SLOTS:
     void testFileWriter3();
     void testFileWriter4();
     void testFileWriter5();
-
+    void testFileWriter6();
     void testSpeedNode1_data();
 
 private:
@@ -863,6 +863,66 @@ void TestNoobaVSSADTest::testFileWriter5()//to test whether the size of written 
     QVERIFY2(final_file_size== initial_file_size,QString("%1 is read as the file size, but should be %1").arg(final_file_size,initial_file_size).toLocal8Bit());
 
 }
+
+
+void TestNoobaVSSADTest::testFileWriter6()//to test whether the size of written file is same as input
+{
+//    QFETCH(QString, data);
+//    QVERIFY2(true, "Failure");
+    FileWriterNode filewriternode;
+
+    QDir dir(QDir::home());
+    if(!dir.exists("NoobaVSS_testdata")){
+        dir.mkdir("NoobaVSS_testdata");
+    }
+    dir.cd("NoobaVSS_testdata");
+    if(!dir.exists("data")){
+        dir.mkdir("data");
+    }
+    dir.cd("data");
+    if(!dir.exists("text")){
+        dir.mkdir("text");
+    }
+    dir.cd("text");
+
+
+    QDateTime timestamp = QDateTime::currentDateTime();// current time is taken in to create a unique file name that is already not created
+    QString test_file =  dir.absoluteFilePath(timestamp.currentDateTime().toString("yyyy-MM-dd-hhmm") + "-test_filewriter_node.txt");
+
+    //QString test_file = dir.absoluteFilePath("testing_01");
+    QList<DetectedEvent> blobevents;
+
+    blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+    blobevents.append(DetectedEvent("blob","2,1,10.0,10.0",1.0));
+    blobevents.append(DetectedEvent("blob","3,1,16.0,18.0",1.0));
+
+    int initial_file_size = 57;
+
+
+    filewriternode.openFile(test_file);//open a file with the above name using filewriter object filewriternode
+    filewriternode.processEvents(blobevents);//write data to the file
+    filewriternode.closeFile();//close the file
+
+    QFile file;
+
+    if(file.isOpen()){
+        file.close();
+    }
+    file.setFileName(test_file);
+    file.size();
+    QTextStream in_stream;
+    in_stream.setDevice(&file);
+    int final_file_size = file.size();
+
+    QVERIFY2(file.open(QIODevice::ReadOnly | QIODevice::Text),"File named "+test_file.toLocal8Bit()+" has not created");
+    QString read = in_stream.readLine(0);
+
+    //qDebug()<<QString("%1").arg(final_file_size).toLocal8Bit();
+    //qDebug()<<"------------------";
+    QVERIFY2(final_file_size== initial_file_size,QString("%1 is read as the file size, but should be %1").arg(final_file_size,initial_file_size).toLocal8Bit());
+
+}
+
 
 QTEST_MAIN(TestNoobaVSSADTest)
 
