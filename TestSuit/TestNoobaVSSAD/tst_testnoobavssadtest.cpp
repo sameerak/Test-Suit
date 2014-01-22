@@ -7,6 +7,8 @@
 #include <NoobaVSSAD/detectedevent.h>
 #include <NoobaVSSAD/distancechange.h>
 #include <NoobaVSSAD/filewriternode.h>
+#include <speedmismatchnode.h>
+#include <configuration.h>
 #include <testdatanode.h>
 
 class TestNoobaVSSADTest : public QObject
@@ -52,6 +54,9 @@ private Q_SLOTS:
     void testFileWriter5();
     void testFileWriter6();
     void testSpeedNode1_data();
+
+    //-----------------------------
+    void testSpeedMismatchNode();
 
 private:
     //SpeedNode spnode;
@@ -920,6 +925,37 @@ void TestNoobaVSSADTest::testFileWriter6()//to test whether the size of written 
     //qDebug()<<QString("%1").arg(final_file_size).toLocal8Bit();
     //qDebug()<<"------------------";
     QVERIFY2(final_file_size== initial_file_size,QString("%1 is read as the file size, but should be %1").arg(final_file_size,initial_file_size).toLocal8Bit());
+
+}
+
+void TestNoobaVSSADTest::testSpeedMismatchNode(){
+    speedmismatchnode smpNode;
+
+
+    connect(this, SIGNAL(generateEvent(QList<DetectedEvent>)), &smpNode, SLOT(captureEvent(QList<DetectedEvent>)));
+    connect(&smpNode, SIGNAL(generateEvent(QList<DetectedEvent>)), this, SLOT(onCaptureEvent(QList<DetectedEvent>)));
+
+    QList<DetectedEvent> blobevents;
+    QList<DetectedEvent> SpeedMismatchEvents;
+
+    blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+    blobevents.append(DetectedEvent("blob","2,1,10.0,10.0",1.0));
+    blobevents.append(DetectedEvent("blob","3,1,1600.0,18.0",1.0));
+
+    // blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
+     //newBlob= DetectedEvent("blob","1,1,10.0,10.0",1.0);
+     //testData.addBLobEvents(blobevents);;
+    //distanceEvents = distnode.processEventsLocal(blobevents);
+
+     capturedEvent.clear();
+     emit generateEvent(blobevents);
+
+     SpeedMismatchEvents = capturedEvent;
+
+     QVERIFY2(SpeedMismatchEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
+
+
+
 
 }
 

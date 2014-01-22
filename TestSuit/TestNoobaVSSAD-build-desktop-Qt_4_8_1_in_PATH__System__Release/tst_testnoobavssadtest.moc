@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tst_testnoobavssadtest.cpp'
 **
-** Created: Wed Jan 22 11:40:40 2014
+** Created: Wed Jan 22 12:08:35 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -22,7 +22,7 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
+      29,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,7 +59,8 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
      513,   19,   19,   19, 0x08,
      531,   19,   19,   19, 0x08,
      549,   19,   19,   19, 0x08,
-     586,  571,   19,   19, 0x0a,
+     571,   19,   19,   19, 0x08,
+     610,  595,   19,   19, 0x0a,
 
        0        // eod
 };
@@ -80,8 +81,8 @@ static const char qt_meta_stringdata_TestNoobaVSSADTest[] = {
     "testFileWriter1()\0testFileWriter2()\0"
     "testFileWriter3()\0testFileWriter4()\0"
     "testFileWriter5()\0testFileWriter6()\0"
-    "testSpeedNode1_data()\0captured_event\0"
-    "onCaptureEvent(QList<DetectedEvent>)\0"
+    "testSpeedNode1_data()\0testSpeedMismatchNode()\0"
+    "captured_event\0onCaptureEvent(QList<DetectedEvent>)\0"
 };
 
 void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -117,7 +118,8 @@ void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 24: _t->testFileWriter5(); break;
         case 25: _t->testFileWriter6(); break;
         case 26: _t->testSpeedNode1_data(); break;
-        case 27: _t->onCaptureEvent((*reinterpret_cast< QList<DetectedEvent>(*)>(_a[1]))); break;
+        case 27: _t->testSpeedMismatchNode(); break;
+        case 28: _t->onCaptureEvent((*reinterpret_cast< QList<DetectedEvent>(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -155,9 +157,9 @@ int TestNoobaVSSADTest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 29)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 29;
     }
     return _id;
 }
