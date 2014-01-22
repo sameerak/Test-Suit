@@ -25,7 +25,9 @@ SOURCES += tst_testnoobavssadtest.cpp \
     NoobaVSSAD/detecedevent.cpp \
     NoobaVSSAD/delaynode.cpp \
     NoobaVSSAD/abandonedobjectnode.cpp \
-    testdatanode.cpp
+    testdatanode.cpp \
+    speedmismatchnode.cpp \
+    configuration.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 OTHER_FILES += \
@@ -42,4 +44,6 @@ HEADERS += \
     NoobaVSSAD/detectedevent.h \
     NoobaVSSAD/delaynode.h \
     NoobaVSSAD/abandonedobjectnode.h \
-    testdatanode.h
+    testdatanode.h \
+    speedmismatchnode.h \
+    configuration.h

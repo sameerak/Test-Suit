@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'featurenode.h'
 **
-** Created: Sat Dec 7 09:29:58 2013
+** Created: Mon Jan 20 15:37:33 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
