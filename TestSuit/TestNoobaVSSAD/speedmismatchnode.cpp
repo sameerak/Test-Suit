@@ -25,9 +25,17 @@ void speedmismatchnode::setCrowdType(QString val){
 void speedmismatchnode::processEvents(const QList<DetectedEvent> event)
 {
 
+
+   // SPEEDANOMALYMAX = config.getItemSpeedAnomalyMax();
+   // SPEEDANOMALYMIN = config.getItemSpeedAnomalyMin();
+   // SPEEDANOMALYRANGE = config.getItemSpeedAnomalyRange();
     SPEEDANOMALYMAX = config.getItemSpeedAnomalyMax();
     SPEEDANOMALYMIN = config.getItemSpeedAnomalyMin();
     SPEEDANOMALYRANGE = config.getItemSpeedAnomalyRange();
+
+    Selected_Anmaly = SPEEDANOMALYMAX;
+    Max_Speed_Thresh =10;
+
 
     QList<DetectedEvent> speedMismatchEvent;
 
