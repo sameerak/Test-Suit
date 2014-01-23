@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'tst_testnoobavssadtest.cpp'
 **
-** Created: Wed Jan 22 12:08:35 2014
+** Created: Thu Jan 23 09:34:08 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -22,7 +22,7 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      29,   14, // methods
+      34,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -46,21 +46,26 @@ static const uint qt_meta_data_TestNoobaVSSADTest[] = {
      241,   19,   19,   19, 0x08,
      258,   19,   19,   19, 0x08,
      284,   19,   19,   19, 0x08,
-     304,   19,   19,   19, 0x08,
-     324,   19,   19,   19, 0x08,
-     353,   19,   19,   19, 0x08,
-     375,   19,   19,   19, 0x08,
-     397,   19,   19,   19, 0x08,
-     419,   19,   19,   19, 0x08,
-     441,   19,   19,   19, 0x08,
-     459,   19,   19,   19, 0x08,
-     477,   19,   19,   19, 0x08,
-     495,   19,   19,   19, 0x08,
-     513,   19,   19,   19, 0x08,
-     531,   19,   19,   19, 0x08,
-     549,   19,   19,   19, 0x08,
-     571,   19,   19,   19, 0x08,
-     610,  595,   19,   19, 0x0a,
+     306,   19,   19,   19, 0x08,
+     328,   19,   19,   19, 0x08,
+     350,   19,   19,   19, 0x08,
+     372,   19,   19,   19, 0x08,
+     394,   19,   19,   19, 0x08,
+     414,   19,   19,   19, 0x08,
+     434,   19,   19,   19, 0x08,
+     463,   19,   19,   19, 0x08,
+     485,   19,   19,   19, 0x08,
+     507,   19,   19,   19, 0x08,
+     529,   19,   19,   19, 0x08,
+     551,   19,   19,   19, 0x08,
+     569,   19,   19,   19, 0x08,
+     587,   19,   19,   19, 0x08,
+     605,   19,   19,   19, 0x08,
+     623,   19,   19,   19, 0x08,
+     641,   19,   19,   19, 0x08,
+     659,   19,   19,   19, 0x08,
+     681,   19,   19,   19, 0x08,
+     720,  705,   19,   19, 0x0a,
 
        0        // eod
 };
@@ -74,8 +79,10 @@ static const char qt_meta_stringdata_TestNoobaVSSADTest[] = {
     "testSpeedNode5()\0testSpeedNode6()\0"
     "testSpeedNode7()\0testSpeedNode8()\0"
     "testSpeedNode9()\0testSpeedNodeSignalSlot()\0"
-    "testDistanceNode1()\0testDistanceNode2()\0"
-    "testDistanceNodeSiglanSlot()\0"
+    "testSpeedNodeScene1()\0testSpeedNodeScene2()\0"
+    "testSpeedNodeScene3()\0testSpeedNodeScene4()\0"
+    "testSpeedNodeScene5()\0testDistanceNode1()\0"
+    "testDistanceNode2()\0testDistanceNodeSiglanSlot()\0"
     "testDistanceChange1()\0testDistanceChange2()\0"
     "testDistanceChange3()\0testDistanceChange4()\0"
     "testFileWriter1()\0testFileWriter2()\0"
@@ -104,22 +111,27 @@ void TestNoobaVSSADTest::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 10: _t->testSpeedNode8(); break;
         case 11: _t->testSpeedNode9(); break;
         case 12: _t->testSpeedNodeSignalSlot(); break;
-        case 13: _t->testDistanceNode1(); break;
-        case 14: _t->testDistanceNode2(); break;
-        case 15: _t->testDistanceNodeSiglanSlot(); break;
-        case 16: _t->testDistanceChange1(); break;
-        case 17: _t->testDistanceChange2(); break;
-        case 18: _t->testDistanceChange3(); break;
-        case 19: _t->testDistanceChange4(); break;
-        case 20: _t->testFileWriter1(); break;
-        case 21: _t->testFileWriter2(); break;
-        case 22: _t->testFileWriter3(); break;
-        case 23: _t->testFileWriter4(); break;
-        case 24: _t->testFileWriter5(); break;
-        case 25: _t->testFileWriter6(); break;
-        case 26: _t->testSpeedNode1_data(); break;
-        case 27: _t->testSpeedMismatchNode(); break;
-        case 28: _t->onCaptureEvent((*reinterpret_cast< QList<DetectedEvent>(*)>(_a[1]))); break;
+        case 13: _t->testSpeedNodeScene1(); break;
+        case 14: _t->testSpeedNodeScene2(); break;
+        case 15: _t->testSpeedNodeScene3(); break;
+        case 16: _t->testSpeedNodeScene4(); break;
+        case 17: _t->testSpeedNodeScene5(); break;
+        case 18: _t->testDistanceNode1(); break;
+        case 19: _t->testDistanceNode2(); break;
+        case 20: _t->testDistanceNodeSiglanSlot(); break;
+        case 21: _t->testDistanceChange1(); break;
+        case 22: _t->testDistanceChange2(); break;
+        case 23: _t->testDistanceChange3(); break;
+        case 24: _t->testDistanceChange4(); break;
+        case 25: _t->testFileWriter1(); break;
+        case 26: _t->testFileWriter2(); break;
+        case 27: _t->testFileWriter3(); break;
+        case 28: _t->testFileWriter4(); break;
+        case 29: _t->testFileWriter5(); break;
+        case 30: _t->testFileWriter6(); break;
+        case 31: _t->testSpeedNode1_data(); break;
+        case 32: _t->testSpeedMismatchNode(); break;
+        case 33: _t->onCaptureEvent((*reinterpret_cast< QList<DetectedEvent>(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -157,9 +169,9 @@ int TestNoobaVSSADTest::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 29)
+        if (_id < 34)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 29;
+        _id -= 34;
     }
     return _id;
 }

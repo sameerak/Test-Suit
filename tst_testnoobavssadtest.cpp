@@ -34,12 +34,6 @@ private Q_SLOTS:
     void testSpeedNode9();
     void testSpeedNodeSignalSlot();
 
-    void testSpeedNodeScene1();
-    void testSpeedNodeScene2();
-    void testSpeedNodeScene3();
-    void testSpeedNodeScene4();
-    void testSpeedNodeScene5();
-
     //---test DistanceNode-----------
     void testDistanceNode1();
     void testDistanceNode2();
@@ -113,104 +107,6 @@ void TestNoobaVSSADTest::testSpeedNode1()//test number of results
     QVERIFY2(speedEvents.count() == 1,QString("%1 events in results. should be 1").arg(speedEvents.count()).toLocal8Bit());
     //Can test the actual speed too.
 }
-
-
-
-
-
- void TestNoobaVSSADTest::testSpeedNodeScene1(){
-
-     SpeedNode spnode;
-     QList<DetectedEvent> blobevents; // TODO   create an empty list here
-     QList<DetectedEvent> speedEvents;
-
-     speedEvents = spnode.processEventsLocal(blobevents);
-     QVERIFY2(speedEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
-
-
-
- }
-
- void TestNoobaVSSADTest::testSpeedNodeScene2(){
-
-     SpeedNode spnode;
-     QList<DetectedEvent> blobevents;
-     QList<DetectedEvent> speedEvents;
-
-     blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
-     speedEvents = spnode.processEventsLocal(blobevents);
-     QVERIFY2(speedEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
-
-
-
- }
-
-
-
- void TestNoobaVSSADTest::testSpeedNodeScene3(){
-
-     SpeedNode spnode;
-     QList<DetectedEvent> blobevents;
-     QList<DetectedEvent> speedEvents;
-
-
-     blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
-     speedEvents = spnode.processEventsLocal(blobevents);
-
-     blobevents.empty();
-     speedEvents = spnode.processEventsLocal(blobevents);
-     QVERIFY2(speedEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
-
-
-
-
- }
-
-
-
- void TestNoobaVSSADTest::testSpeedNodeScene4(){
-
-     SpeedNode spnode;
-     QList<DetectedEvent> blobevents;
-     QList<DetectedEvent> speedEvents;
-
-     blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
-     speedEvents = spnode.processEventsLocal(blobevents);
-
-     blobevents.append(DetectedEvent("blob","2,1,10.0,10.0",1.0));
-     speedEvents = spnode.processEventsLocal(blobevents);
-     QVERIFY2(speedEvents.count() == 1,QString("%1 events in results. should be 1").arg(speedEvents.count()).toLocal8Bit());
-
-
-
- }
-
-
-
- void TestNoobaVSSADTest::testSpeedNodeScene5(){
-
-     SpeedNode spnode;
-     QList<DetectedEvent> blobevents; // TODO   create an empty list here
-     QList<DetectedEvent> speedEvents;
-
-     blobevents.append(DetectedEvent("blob","1,1,10.0,10.0",1.0));
-     speedEvents = spnode.processEventsLocal(blobevents);
-
-      blobevents.append(DetectedEvent("blob","2,2,10.0,10.0",1.0));
-     speedEvents = spnode.processEventsLocal(blobevents);
-
-     QVERIFY2(speedEvents.isEmpty(),"If no previous blobs from same tag, this should be empty");
-
-
-
- }
-
-
-
-
-
-
-
 
 void TestNoobaVSSADTest::testSpeedNode2()//
 {
